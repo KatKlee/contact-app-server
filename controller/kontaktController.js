@@ -13,11 +13,12 @@ export const addContact = (req, res) => {
     const contact = {
         firstname: req.body.firstname,
         lastname: req.body.lastname,
-        tel: req.body.mobile,
+        tel: req.body.tel,
         address: {
             street: req.body.street,
             housenr: req.body.housenr,
-            postcode: req.body.postcode
+            postcode: req.body.postcode,
+            city: req.body.city
         },
         favourite: req.body.favourite
     }
@@ -31,9 +32,8 @@ export const addContact = (req, res) => {
 }
 
 export const updateAdressbuch = (req, res) => {
-    const id = req.body._id
 
-    updateContact(id)
+    updateContact(req.body)
         .then(result => {
             if (result.acknowledged) {
                 getAll()
@@ -51,6 +51,7 @@ export const deleteEintrag = (req, res) => {
 
     deleteContact(id)
         .then(result => {
+            console.log(result)
             if (result.acknowledged) {
                 getAll()
                     .then(allContacts => res.status(200).json(allContacts))

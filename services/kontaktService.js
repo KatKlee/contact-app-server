@@ -13,19 +13,35 @@ export const getAll = () => {
     })
 }
 
-export const updateContact = (_id) => {
+export const updateContact = (contactBody) => {
+
+    const id = contactBody._id
+
+    const contact = {
+        firstname: contactBody.firstname,
+        lastname: contactBody.lastname,
+        tel: contactBody.tel,
+        address: {
+            street: contactBody.address.street,
+            housenr: contactBody.address.housenr,
+            postcode: contactBody.address.postcode,
+            city: contactBody.address.city
+        },
+        favourite: contactBody.favourite
+    }
     return new Promise((resolve, reject) => {
         getDB()
-            .then(db => db.collection('kontakte').updateOne({ _id: new ObjectId(contact._id) }, { $set: { ...contact } }))
+            .then(db => db.collection('kontakte').updateOne({ _id: new ObjectId(id) }, { $set: { ...contact } }))
             .then(result => resolve(result))
             .catch(err => reject(err))
     })
 }
 
-export const deleteContact = (_id) => {
+export const deleteContact = (id) => {
+    console.log(id)
     return new Promise((resolve, reject) => {
         getDB()
-            .then(db.collection('kontakte').deleteOne({ _id: new ObjectId(_id) }))
+            .then(db => db.collection('kontakte').deleteOne({ _id: new ObjectId(id) }))
             .then(result => resolve(result))
             .catch(err => reject(err))
     })
