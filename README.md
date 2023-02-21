@@ -24,7 +24,7 @@ Version 2.0:
 
 *NOTICE: This project is still in progress.*
 
-*try the current version: https://supercode-contact-app.onrender.com*
+*Try the current version: https://supercode-contact-app.onrender.com*
 
 *Version 2.0:  
 – an alphabet index in the list view as a bar on the right side of the screen for quick navigation  
