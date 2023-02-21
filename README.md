@@ -20,8 +20,9 @@ Version 2.0:
 
 *The app includes functions such as a search, setting favourites and adding and editing contacts.*
 
-*I implemented the elements and the structure according to an example, but adapted the design (colours, font and shapes) according to my ideas.  
-NOTICE: This project is still in progress.*
+*I implemented the elements and the structure according to an example, but adapted the design (colours, font and shapes) according to my ideas.*
+
+*NOTICE: This project is still in progress.*
 
 *try the current version: https://supercode-contact-app.onrender.com*
 
